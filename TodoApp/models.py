@@ -1,0 +1,32 @@
+# Models are a way for SQL to understand what kind of database
+# tables we are going to be creating and updating in the future.
+# A db model is the actual record that is inside a DB table
+
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+
+# imported from database.py which uses sqlalchemy declarative_base
+from database import Base
+
+
+class Users(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, unique=True)
+    username = Column(String, unique=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    hashed_password = Column(String)
+    is_active = Column(Boolean, default=True)
+    role = Column(String)
+
+
+class Todos(Base):
+    __tablename__ = 'todos'
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String)
+    description = Column(String)
+    priority = Column(Integer)
+    complete = Column(Boolean, default=False)
+    owner_id = Column(Integer, ForeignKey("users.id"))
