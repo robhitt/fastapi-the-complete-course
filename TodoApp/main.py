@@ -7,7 +7,7 @@ from routers import auth, todos
 app = FastAPI()
 
 # CREATE DATABASE
-# dynamically create a database w/o having to write sql queries
+# dynamically create a database  w/o having to write sql queries
 # creates everything from database.py and models.py files
 # to be able to create a new db with a table of todos w
 # of the columns we laid out w our models.py file
