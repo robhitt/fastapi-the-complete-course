@@ -13,5 +13,20 @@
 `sqlite> SELECT * FROM todos`  
 `.quit`  
 
+## JWT
+Encode/Decode - https://jwt.io
+
+3 parts - header, payload, signature
+
+header
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+
+
 
 
