@@ -9,6 +9,7 @@ from starlette import status
 app = FastAPI()
 
 
+# MODEL
 class Book:
     id: int
     title: str
@@ -26,7 +27,7 @@ class Book:
         self.published_date = published_date
 
 
-# Pydantic
+# SCHEMA - Pydantic
 class BookRequest(BaseModel):
     # in Pydantic2 `id: Optional[int] = None`
     id: Optional[int] = Field(title='id is optional')
